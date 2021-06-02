@@ -1,0 +1,8 @@
+
+int count_nodes(node *p)
+{
+    if( p==0)
+        return 0;
+    else
+        return count_nodes(p->next)+1;
+}
