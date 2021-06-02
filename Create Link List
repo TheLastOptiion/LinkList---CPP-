@@ -1,21 +1,12 @@
-#include <iostream>
-#include <bits/stdc++.h>
-#include <cmath>
-#include <stdlib.h>
-#include <time.h>
-#include <vector>
-#include <iterator>
-#include <stdlib.h>
-using namespace std;
-#define ONLINE_JUDGE
 
 class node {
-             public:
-              int data;
-              node *next;
-           } *str=NULL,*t;
+	     public:
+	     int data;
+	     node *next;
+	   } *str=NULL,*t;
 
-void insert_data(int n){
+void insert_data(int n)
+                       {
                          if( str == NULL)
                               {
                                 node* p = new node;
@@ -39,32 +30,21 @@ void insert_data(int n){
                   while(p!=NULL)
                   {
                      cout<< p->data <<"  ";
-
                       p=p->next;
                   }
-
               }
 int main()
 {
-	#ifndef ONLINE_JUDGE
-	  freopen("E:\\input-output\\input.txt","r",stdin);
-	  freopen("E:\\input-output\\output.txt","w",stdout);
-	  // **********************************************************   Open sublime text for input and output file.....HEHE  ****************************//
-	#endif
-	/* -----------------------Write your code here ----------------------*/
-
 	insert_data(1);
 	insert_data(2);
 	insert_data(3);
 	insert_data(5);
 	insert_data(3);
 	insert_data(7);
-
+	
 	Display(str);
-
-
+	
     return 0;
-
 }
 
 
