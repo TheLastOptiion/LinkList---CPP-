@@ -1,0 +1,29 @@
+
+int max_num_iterative(node *p)
+   {
+     int maxx=INT_MIN;
+      while(p!=0)
+           {
+             if(p->data>maxx)
+                maxx=p->data;
+                p=p->next;
+           }
+      return maxx;
+    }
+
+///////////////////////////////////////////////////////////////////////////
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+int recursive_max(node *p)
+   {
+     int x=0;
+     if(p==0)
+        return INT_MIN;
+     x=Rmax(p->next);
+     if( x>p->data)
+        return x;
+     else
+        return p->data;
+    }
