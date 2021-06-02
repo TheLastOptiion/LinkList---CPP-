@@ -1,0 +1,8 @@
+
+int sum(node* p)
+{
+    if(p==0)
+        return 0;
+    else
+        return sum(p->next)+ p->data ;
+}
