@@ -1,0 +1,9 @@
+
+void Display(node *p)
+  {
+                if(p!=NULL)
+                  {
+                     cout<< p->data <<"  ";
+                     Display(p->next);
+                  }
+  }
