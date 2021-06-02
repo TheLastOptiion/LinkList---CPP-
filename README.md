@@ -1,2 +1,2 @@
 # Linked List Programs 
-All kind of LinkList programs.
+Functions and Varoius Operations.
