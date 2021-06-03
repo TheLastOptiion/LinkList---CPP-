@@ -1,0 +1,29 @@
+** Linear Search
+_______________________________________________
+node* LinearSearch(node *p,int target)
+{
+     while(p!=0)
+      {
+        if(target == p->data)
+            return p;
+        p=p->next;
+      }
+}
+_______________________________________________
+
+///////////////////////////////////////////////////////////
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+** Recursive Version: 
+_________________________________________________
+node* RecursiveSearch(node* p,int target)
+{
+    if(p==NULL)
+        return NULL;
+    if( target == p->data)
+         return p;
+    return RecursiveSearch(p->next,target);
+}
+_________________________________________________
