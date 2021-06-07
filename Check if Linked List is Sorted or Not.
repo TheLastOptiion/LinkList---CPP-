@@ -1,0 +1,24 @@
+bool  sorted_check(node* p)
+{
+    node* q=NULL;
+    q=p;
+    p=p->next;
+    while(p!=NULL)
+    {
+        if( q->data > p->data )
+             return false;
+         q=q->next;
+         p=p->next;
+    }
+    return true;
+
+}
+
+
+
+ if(sorted_check(head)==true)
+        cout<<"Yes Sorted.\n";
+ else
+        cout<<"Not sorted.\n";
+        
+        
