@@ -1,0 +1,16 @@
+node* insert_last( node* p,int n)
+{
+    while(true)
+    {
+        if( p->next==NULL)
+        {
+            node * q = new node;
+            q->next=NULL;
+            q->data=n;
+            p->next=q;
+            break;
+        }
+            p=p->next;
+    }
+
+}
