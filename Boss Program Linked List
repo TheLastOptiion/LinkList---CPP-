@@ -1,0 +1,228 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <cmath>
+#include <stdlib.h>
+#include <time.h>
+#include <vector>
+#include <iterator>
+#include <stdlib.h>
+using namespace std;
+#define ONLINE_JUDGE
+
+class node {
+             public:
+              int data;
+              node *next;
+           } *str=NULL,*t,*lst;
+
+void insert_data(int n){
+                         node* p = new node;
+
+                         if( str == NULL)
+                              {
+                                p->data = n;
+                                p->next = NULL;
+                                    str = p;
+                                      t = p;
+                              }
+                          else
+                              {
+                                p->data = n;
+                                p->next = NULL;
+                                t->next = p;
+                                      t = p;
+                                      lst=p;
+                              }
+                        }
+
+ void Display_iterative( node *p)
+              {
+                  while(p!=NULL)
+                  {
+                     cout<< p->data <<"  ";
+                      p=p->next;
+                  }
+              }
+
+
+
+ void Display_recursive(node *p)
+              {
+                if(p!=NULL)
+                  {
+                     cout<< p->data <<"  ";
+
+                      Display_recursive(p->next);
+                  }
+              }
+
+void Display_reverse(node *p)
+              {
+                  if(p==NULL)
+                    return;
+                  Display_reverse(p->next);
+                  cout<< p->data <<"  ";
+              }
+
+int cnt(node *p)
+{
+    if( p==0)
+        return 0;
+    else
+        return 1+cnt(p->next);
+}
+
+int max_num(node *p)
+{
+    int maxx=INT_MIN;
+
+    while(p!=0)
+         {
+           if(p->data>maxx)
+              maxx=p->data;
+
+           p=p->next;
+         }
+
+    return maxx;
+}
+
+int sum(node* p)
+{
+    if(p==0)
+        return 0;
+    else
+        return sum(p->next)+ p->data ;
+}
+
+int Rmax(node *p) //Recursive function for returning Max element in a linked list.
+{
+
+    int x=0;
+
+    if(p==0)
+        return INT_MIN;
+
+      x=Rmax(p->next);
+
+    if( x>p->data)
+        return x;
+    else
+        return p->data;
+
+}
+
+
+node* linear_search(node *p,int target)
+{
+     while(p!=0)
+    {
+        if(target == p->data)
+            {return p;}
+
+            p=p->next;
+    }
+
+    cout<<"Element Not Found";
+
+}
+
+node* liner_serach_recursive(node* p,int target)
+{
+    if(p==NULL)
+        return NULL;
+
+    if( target == p->data)
+         return p;
+
+
+    return liner_serach_recursive(p->next,target);
+}
+
+void insert_last( node* p,int n)
+{
+    while(true)
+    {
+        if( p->next==NULL)
+        {
+            node * q = new node;
+            q->next=NULL;
+            q->data=n;
+            p->next=q;
+            break;
+        }
+            p=p->next;
+    }
+
+}
+
+void insert_at_sorted_position( node* p,int n)
+{
+    node* temp=NULL;
+    while(p!=NULL)
+    {
+        if( p->data > n && n >= temp->data && p->next!=NULL )
+        {
+            node * q = new node;
+            q->data=n;
+            q->next=p;
+            temp->next=q;
+
+        temp=temp->next;
+        }
+
+        temp=p;
+        p=p->next;
+    }
+
+}
+
+int main()
+{
+	#ifndef ONLINE_JUDGE
+	  freopen("E:\\input-output\\input.txt","r",stdin);
+	  freopen("E:\\input-output\\output.txt","w",stdout);
+	  // **********************************************************   Open sublime text for input and output file.....HEHE  ****************************//
+	#endif
+	/* -----------------------Write your code here ----------------------*/
+
+	insert_data(1);
+	insert_data(2);
+	insert_data(3);
+	insert_data(5);
+	insert_data(9);
+	insert_data(7);
+
+	Display_iterative(str);
+    cout<<endl;
+	Display_reverse(str);
+    cout<<endl;
+    cout<<cnt(str);
+    cout<<endl;
+    cout<<sum(str);
+    cout<<endl;
+    cout<<max_num(str);
+    cout<<endl;
+    cout<<Rmax(str);
+    cout<<endl;
+    linear_search(str,7);
+    cout<<endl;
+    node*a  = liner_serach_recursive(str,7);
+    cout<<a->data;
+
+    insert_last(str,234);
+    cout<<"-------\n";
+    Display_iterative(str);
+
+    insert_at_sorted_position(str,4);
+    insert_at_sorted_position(str,6);
+    insert_at_sorted_position(str,434);
+      cout<<"-------\n";
+    Display_iterative(str);
+
+
+    return 0;
+
+}
+
+
