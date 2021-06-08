@@ -4,7 +4,6 @@
     return;
 
     printReverse(head->next);
-
     // After everything else is printed, print head
     cout << head->data <<"  ";
 }
