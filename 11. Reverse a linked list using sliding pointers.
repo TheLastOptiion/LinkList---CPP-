@@ -1,4 +1,9 @@
-
+// We Need total 3 pointer.
+1. To point our (start OR head) node.
+2. NULL
+3. NULL
+///////////////////////////////////////////////////////////////////
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 node* reverse_linked_list(node* list)
 {
              
