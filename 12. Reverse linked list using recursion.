@@ -1,0 +1,14 @@
+////////////////////////////
+
+node* a;  // Global * variable node type....
+
+void reverse_recursive(node *q,node *p)
+{
+     if(p)
+         {
+           reverse_recursive(p,p->next);
+           p->next=q;
+         }
+     else
+           a=q;
+}
