@@ -1,4 +1,5 @@
 
+// Iterative approch......................
 int max_num_iterative(node *p)
    {
      int maxx=INT_MIN;
@@ -15,6 +16,7 @@ int max_num_iterative(node *p)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+//Recursive approach.......................
 
 int recursive_max(node *p)
    {
