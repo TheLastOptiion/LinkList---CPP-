@@ -1,0 +1,107 @@
+
+/* 
+         @@@@@@@@@ @@    @@ @@ @@      @@ @@@@@@@ @@    @@ @@@@     @@@@@@@        @@@
+         @@        @@    @@ @@ @@      @@ @@      @@@   @@ @@  @@   @@    @@      @@ @@
+         @@        @@    @@ @@ @@      @@ @@      @@@@  @@ @@   @@  @@    @@     @@   @@
+         @@@@@@@@@ @@@@@@@@ @@ @@      @@ @@@@@@@ @@ @@ @@ @@    @@ @@@@@@@     @@@   @@@
+                @@ @@    @@ @@  @@    @@  @@      @@  @@@@ @@   @@  @@   @@    @@@@@@@@@@@
+                @@ @@    @@ @@   @@  @@   @@      @@   @@@ @@  @@   @@    @@  @@         @@
+         @@@@@@@@@ @@    @@ @@     @@     @@@@@@@ @@    @@ @@@@     @@     @@ @@         @@
+*/
+
+#include <vector>
+#include <list>
+#include <iostream>
+#include <stdlib.h>
+#include <bits/stdc++.h>
+#include <ctime>
+#define  loop(n) for(int ii=0;ii<n;ii++)
+#define  I freopen("E:\\input-output\\input.txt","r",stdin)
+#define  O freopen("E:\\input-output\\output.txt","w",stdout)
+using namespace std;
+      
+class node{
+             public:
+                 int data;
+                 node *next;
+          }   ;
+node* str=NULL,*t;
+
+void insert(int n){
+        
+        node* p = new node;
+
+        if( str==NULL)
+        {
+            str=p;
+            p->data=n;
+            p->next=NULL;
+            t=p;
+        }
+        else
+        {
+            p->data=n;
+            p->next=NULL;
+            t->next=p;
+            t=p;
+        }
+}
+
+void display(node* p){
+
+    if( p!=NULL)
+    {
+        cout<<p->data<<" ";
+        display(p=p->next);
+    }
+}
+
+void remove_duplicates(node  *p){
+   
+           node *q = p;
+                 p = p->next;
+
+           while( p!=NULL)
+                   {
+                       if( q->data == p->data)
+                         {
+                           q->next = p->next;
+                           p=q;
+                           p=p->next;
+                         }
+                       else
+                         {
+                           q=q->next;
+                           p=p->next;
+                         }
+                   }
+}
+
+int main(){
+              I,O;
+
+       //Insert in list    
+           insert(1);
+           insert(1);
+           insert(1);
+           insert(1);
+           insert(2);
+           insert(2);
+           insert(2);
+           insert(2);
+
+       // Display List
+           display(str);
+
+       // remove duplicates in sorted list
+       
+           remove_duplicates(str);    
+        cout<<" \n\n";
+       // Display List
+           display(str);
+
+ 
+ return 0;
+}
+
+
