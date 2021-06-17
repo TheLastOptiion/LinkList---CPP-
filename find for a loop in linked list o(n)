@@ -1,0 +1,26 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *p){
+        
+        ListNode *a=p,*b=p;
+        
+        while(true)
+        {
+            if(a==NULL) return false;        // when list has 0 elements return false.
+            a=a->next;                       // move forward by 1 node..
+            b=b->next;                       // move forward by 1 node...
+            if(b==NULL) return false;        // checking if list has more nodes...
+            else        b=b->next;           // if yes move to next node...
+            if(b==NULL) return false;        // again check if list has more nodes or not....
+            if(a==b)    return true;         // if a and b are equal this means we have found the loop in linked list..
+        }
+    }
+};
